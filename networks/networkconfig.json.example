@@ -1,0 +1,102 @@
+{
+    "caliper": {
+        "blockchain": "ethereum",
+        "command" : {}
+    },
+    "ethereum": {
+        "url": "<Websocket RPC Endpoint>",
+        "contractDeployerAddress": "<Contract Deployer Address>",
+        "contractDeployerAddressPrivateKey": "<Contract Deployer Address Private Key>",
+        "fromAddress": "<From Address>",
+        "fromAddressSeed": "<From Address Seed>",
+        "fromAddressPrivateKey": "<From Address Private Key>",
+        "transactionConfirmationBlocks": 2,
+        "contracts": {
+            "swapper": {
+                "path": "../src/Swapper.json",
+                "estimateGas": true,
+                "gas": {
+                    "swapAtoB": 150000,
+                    "init": 3000000
+                },
+                "abi": [
+                  {
+                    "inputs": [
+                      {
+                        "internalType": "address",
+                        "name": "uniV2Factory",
+                        "type": "address"
+                      },
+                      {
+                        "internalType": "address",
+                        "name": "uniV2Router",
+                        "type": "address"
+                      },
+                      {
+                        "internalType": "address",
+                        "name": "tokenA",
+                        "type": "address"
+                      },
+                      {
+                        "internalType": "address",
+                        "name": "tokenB",
+                        "type": "address"
+                      },
+                      {
+                        "internalType": "uint256",
+                        "name": "amountTokenA",
+                        "type": "uint256"
+                      },
+                      {
+                        "internalType": "uint256",
+                        "name": "amountTokenB",
+                        "type": "uint256"
+                      },
+                      {
+                        "internalType": "uint256",
+                        "name": "liquidityAmountTokenA",
+                        "type": "uint256"
+                      },
+                      {
+                        "internalType": "uint256",
+                        "name": "liquidityAmountTokenB",
+                        "type": "uint256"
+                      }
+                    ],
+                    "name": "init",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                  },
+                  {
+                    "inputs": [
+                      {
+                        "internalType": "uint256",
+                        "name": "amountTokenA",
+                        "type": "uint256"
+                      }
+                    ],
+                    "name": "swapAtoB",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                  },
+                  {
+                    "inputs": [
+                      {
+                        "internalType": "uint256",
+                        "name": "amountTokenB",
+                        "type": "uint256"
+                      }
+                    ],
+                    "name": "swapBtoA",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                  }
+                ],
+                "address": "<Deployed Swapper Contract Address>"
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "poa-benchmark",
+  "version": "1.0.0",
+  "description": "Ethereum Chain benchmark tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AMPnet/poa-benchmark.git"
+  },
+  "author": "AMPnet IO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AMPnet/poa-benchmark/issues"
+  },
+  "homepage": "https://github.com/AMPnet/poa-benchmark#readme",
+  "dependencies": {
+    "@hyperledger/caliper-cli": "^0.4.2",
+    "web3": "^1.2.2"
+  }
+}
