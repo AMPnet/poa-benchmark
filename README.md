@@ -7,7 +7,7 @@ This simple tools allows for connecting to arbitrary EVM blockchain network and 
 
 The deployed smart contract source code and the artifact must be stored in the ```src``` subfolder. The deployed smart contract is then registered in the ```networks/networkconfig.json```.
 
-In the given ```networks/networkconfig.json.examnple``` example the `Swapper` is registered under the `"swapper"` id and referenced as such in the benchmark specification.
+In the given ```networks/networkconfig.json.example``` example the `Swapper` is registered under the `"swapper"` id and referenced as such in the benchmark specification.
 
 The benchmark specification can be found in ```benchmarks/config.yaml```. Config in this repo is going to spawn 50 worker processes (`test.worker.number=50`) simulating 50 different clients connected to the blockchain network.
 This pool of workers combined will generate load of 10 transactions per second (`test.rounds.rateControl.opts.tps=10`), and in total 20000 transactions will be generated and broadcasted (`test.rounds.txNumber=20000`). Workload (`test.rounds.workload.module`) is pointing to the `benchmarks/workloads/swap.js` file. This file contains the transaction data to be used for every worker. The transaction data is defined in the `submitTransaction()` function and in the given `swap.js` example it is set to call the `swapAtoB()` by providing number 1 as the only parameter in this function call. The function call is executed on the `"swapper"` contract defined in the network config.
